@@ -18,6 +18,13 @@ Window {
         rectColor: "dodgerblue"
         anchors.right: parent.right
     }
+
+
+
+
+
+
+
 //    Component.onCompleted: {
 //        // signal인 notify에 connect를 붙이면,
 //        // notify호출할 때 데이터를 connect내부의 인자로 전달한다.

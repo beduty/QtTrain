@@ -3,12 +3,14 @@ import QtQuick 2.12
 Item {
     width: receiverRectId.width
     height: receiverRectId.height
+
+    // main에서 색상 변경할 수 있도록 property 열어둔다
     property alias rectColor : receiverRectId.color
+
+    // 들어오는 시그널 받아서 처리하는 부분이 필요하다.
     function receiveInfo(count) {
-        // 구독하는 개념이다.
-        // signal.connect(receiveInfo)로 연결되어 있어서,
-        // signal에서 보내면 receiveInfo에서 데이터 받아 처리한다.
-        receiverdisplayTextId.text = count
+        // 데이터 받아와서 text갱신하면 해당 부분이 업데이트된다.
+        displayTextId.text = count
         console.log("Receiver received number : " + count)
     }
 
@@ -18,7 +20,7 @@ Item {
         height: 200
         color : "red"
         Text{
-            id :  receiverdisplayTextId
+            id :  displayTextId
             anchors.centerIn: parent
             font.pointSize: 20
             text : "0"

@@ -9,7 +9,6 @@ Window {
     Row{
         x: 20
         spacing: 10
-        buttonColor : "yellowgreen"
         MButton{
             buttonColor : "yellowgreen"
             buttonText : "Button 1"
