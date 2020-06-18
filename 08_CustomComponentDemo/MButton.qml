@@ -6,16 +6,16 @@ Item {
     property alias buttonColor : containerRectId.color
     width:  containerRectId.width
     height: containerRectId.height
-    signal buttonClicked
+    signal buttonClickedSignal
 
     Rectangle{
         id : containerRectId
         width   : buttonTextId.implicitWidth + 50
         height: buttonTextId.implicitHeight + 50
-        color: "red"
+        color: "beige"
         border {
             color : "blue"
-            width: 3
+            width: 1
         }
         Text{
             id : buttonTextId
@@ -24,7 +24,7 @@ Item {
         MouseArea{
             anchors.fill: parent
             onClicked: {
-                rootId.buttonClicked()
+                rootId.buttonClickedSignal()
                 //console.log("Clicked On : " + buttonTextId.text)
             }
         }

@@ -7,20 +7,32 @@ Window {
     height: 480
     title: qsTr("Hello World222")
     Row{
-        x: 100
+        x: 20
+        spacing: 10
+        buttonColor : "yellowgreen"
         MButton{
-            buttonColor : "green"
+            buttonColor : "yellowgreen"
             buttonText : "Button 1"
-            onButtonClicked: {
+            onButtonClickedSignal:  {
+                rectId.color = "blue"
                 console.log("Clicked on Button1 from main file")
             }
         }
         MButton{
-            buttonText : "Button 2"
-            onButtonClicked: {
+            buttonText : "beige"
+            onButtonClickedSignal: {
+                rectId.color = "orange"
                 console.log("Clicked on Button2 from main file")
             }
         }
+    }
+    Rectangle{
+        id :rectId
+        x :20
+        y: 70
+        width: 190
+        height: 30
+        color: "beige"
     }
 
 }

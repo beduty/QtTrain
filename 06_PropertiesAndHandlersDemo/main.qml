@@ -7,25 +7,24 @@ Window {
     height: 480
     title: qsTr("Properties and Handlers Demo")
 
-    property string mFirstName : "Daniel"
+    property string mFirstName :  "Daniel"
     onMFirstNameChanged: {
         console.log("The firsname changed to : " + mFirstName)
     }
-
     Rectangle{
         width: 300
         height: 100
         color: "greenyellow"
         anchors.centerIn: parent
+        Text{
+            anchors.centerIn: parent
+            text:mFirstName
+        }
         MouseArea{
             anchors.fill: parent
             onClicked: {
                 mFirstName = "John"
             }
         }
-    }
-
-    Component.onCompleted: {
-        console.log("The firstName is " + mFirstName)
     }
 }
