@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/melani.PNG</file>
+    </qresource>
+</RCC>
