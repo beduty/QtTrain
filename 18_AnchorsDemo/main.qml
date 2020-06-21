@@ -6,24 +6,94 @@ Window {
     width: 640
     height: 480
     title: qsTr("Anchors Demo")
+
+
+
+//    Rectangle{
+//        id : containerRectId
+//        width: 300; height: width
+//        border.color: "black"
+//        anchors.centerIn: parent
+
+//        Rectangle{
+//            id : topLeftRectId
+//            width:100; height: width
+//            color: "magenta"
+
+//        }
+//        Rectangle{
+//            id : topCenterRectId
+//            width:100; height: width
+//            color: "yellowgreen"
+//            anchors.left: topLeftRectId.right
+//            anchors.top : topLeftRectId.top
+//        }
+//        Rectangle{
+//            id : topRightRectId
+//            width:100; height: width
+//            color: "dodgerblue"
+//            anchors.left: topCenterRectId.right
+//            anchors.top : topCenterRectId.top
+//        }
+//        Rectangle{
+//            id : centerLeftRectId
+//            width:100; height: width
+//            color: "red"
+//            anchors.top: topLeftRectId.bottom
+//        }
+//        Rectangle{
+//            id : centerCenterRectId
+//            width:100; height: width
+//            color: "green"
+//            anchors.horizontalCenter: parent.horizontalCenter
+//            anchors.verticalCenter: parent.verticalCenter
+//        }
+//        Rectangle{
+//            id : centerRightRectId
+//            width:100; height: width
+//            color: "blue"
+//            anchors.left: centerCenterRectId.right
+//            anchors.top: topRightRectId.bottom
+//        }
+//        Rectangle{
+//            id : bottomLeftRectId
+//            width:100; height: width
+//            color: "royalblue"
+//            anchors.top: centerLeftRectId.bottom
+//        }
+//        Rectangle{
+//            id : bottomCenterRectId
+//            width:100; height: width
+//            color: "yellow"
+//            anchors.left: bottomLeftRectId.right
+//            anchors.top: centerCenterRectId.bottom
+//        }
+//        Rectangle{
+//            id : bottomRightRectId
+//            width:100; height: width
+//            color: "pink"
+//            anchors.left: bottomCenterRectId.right
+//            anchors.top: centerRightRectId.bottom
+//        }
+//    }
+
+
+
     Rectangle{
         id : containerRectId
-        width: 300
-        height: width
+        width: 300; height: width
         border.color: "black"
         anchors.centerIn: parent
 
         Rectangle{
             id : topLeftRectId
-            width:100
-            height: width
+            width:100; height: width
             color: "magenta"
 
         }
         Rectangle{
             id : topCenterRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "yellowgreen"
             anchors.left: topLeftRectId.right
             anchors.top : topLeftRectId.top
@@ -36,23 +106,20 @@ Window {
         }
         Rectangle{
             id : topRightRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "dodgerblue"
             anchors.left: topCenterRectId.right
             anchors.top : topCenterRectId.top
         }
         Rectangle{
             id : centerLeftRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "red"
             anchors.top: topLeftRectId.bottom
         }
         Rectangle{
             id : centerCenterRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "green"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
@@ -64,42 +131,30 @@ Window {
         }
         Rectangle{
             id : centerRightRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "blue"
             anchors.left: centerCenterRectId.right
             anchors.top: topRightRectId.bottom
         }
         Rectangle{
             id : bottomLeftRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "royalblue"
             anchors.top: centerLeftRectId.bottom
         }
         Rectangle{
             id : bottomCenterRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "yellow"
             anchors.left: bottomLeftRectId.right
             anchors.top: centerCenterRectId.bottom
         }
         Rectangle{
             id : bottomRightRectId
-            width: 100
-            height: width
+            width:100; height: width
             color: "pink"
             anchors.left: bottomCenterRectId.right
             anchors.top: centerRightRectId.bottom
         }
-    }
-
-    Rectangle{
-        id: siblingRect
-        width: 200
-        height: 200
-        color: "orange"
-        anchors.right: containerRectId.left
     }
 }

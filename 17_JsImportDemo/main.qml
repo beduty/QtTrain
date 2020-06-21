@@ -26,14 +26,14 @@ Window {
             onClicked: {
                 addlog("Hi Js!!")
                 Utilities1.greeting()
-                console.log("Our ages combined yeild : " + Utilities1.combineAges(33,17))
-                console.log("The difference of 50 and 33 ios : " + Utilities1.substract(50,33))
+                console.log("Our ages combined yeild : "
+                            + Utilities1.combineAges(33,17))
+                console.log("The difference of 50 and 33 ios : "
+                            + Utilities1.substract(50,33))
             }
         }
-
     }
-
-
-
-
 }
+
+
+

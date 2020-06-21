@@ -8,18 +8,13 @@ Window {
     title: qsTr("Key Navigation Demo")
 
 //    Row{
-//        x : 100
 //        anchors.centerIn: parent
 //        Rectangle{
 //            id : firstRectId
-//            width: 100
-//            height: width
+//            width: 100; height: width
 //            border.color: "black"
 //            color: "green"
 //            focus: true
-//            Keys.onDigit5Pressed: {
-//                console.log("I am Rect1")
-//            }
 //            KeyNavigation.right: secondRectId
 //            onFocusChanged: {
 //                if(focus === true){
@@ -31,14 +26,10 @@ Window {
 //        }
 //        Rectangle{
 //            id : secondRectId
-//            width: 100
-//            height: width
+//            width: 100; height: width
 //            border.color: "black"
-//            color: "blue"
-//            focus: true
-//            Keys.onDigit5Pressed: {
-//                console.log("I am Rect2")
-//            }
+//            color: "grey"
+//            focus: false
 //            KeyNavigation.left: firstRectId
 //            onFocusChanged: {
 //                if(focus === true){

@@ -25,67 +25,54 @@ Window {
 
             Rectangle{
                 id : topLeftRectId
-                width:100
-                height: width
+                width: 100; height: width
                 color: "magenta"
-
                 Image {
                     anchors.centerIn: parent
-                    width : 50
-                    height: width
+                    width: 50; height: width
                     source: "image/melani.PNG"
                 }
-
             }
             Rectangle{
                 id : topCenterRectId
-                width: 60
-                height: width
+                width: 60; height: width
                 color: "yellowgreen"
             }
             Rectangle{
                 id : topRightRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "dodgerblue"
             }
             Rectangle{
                 id : centerLeftRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "red"
             }
             Rectangle{
                 id : centerCenterRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "green"
             }
             Rectangle{
                 id : centerRightRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "blue"
             }
             Rectangle{
                 id : bottomLeftRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "royalblue"
             }
             Rectangle{
                 id : bottomCenterRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "yellow"
             }
             Rectangle{
                 id : bottomRightRectId
-                width: 100
-                height: width
+                width: 100; height: width
                 color: "pink"
             }
-
         }
     }
 }
