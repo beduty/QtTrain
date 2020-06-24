@@ -13,18 +13,20 @@ Window {
         spacing: 20
 
         Slider{
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                    parent.horizontalCenter
             from: 1
             to : 100
             value:  40
             onValueChanged: {
                 progressBarId.value = value
-                console.log("Value changed to : " + value)
+                console.log("Value
+                          changed:" + value)
             }
         }
-
         ProgressBar{
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                    parent.horizontalCenter
             id : progressBarId
             from: 1
             to : 100

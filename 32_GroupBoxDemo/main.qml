@@ -19,35 +19,36 @@ Window {
         }
         GroupBox{
             title: "Choose bonus"
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                                parent.horizontalCenter
             Column{
                 RadioButton{
                     text:"Coke"
                     onCheckedChanged: {
                         if(checked === true){
-                            console.log("Coke Button Checked")
+                            console.log("Coke Checked")
                         }else{
-                            console.log("Coke Button is Not Checked")
+                            console.log("Coke UnChecked")
                         }
                     }
                 }
                 RadioButton{
-                    text:"Green Tea"
+                    text:"Tea"
                     onCheckedChanged: {
                         if(checked === true){
-                            console.log("Green Tea Button Checked")
+                            console.log("Tea Checked")
                         }else{
-                            console.log("Green Tea Button is Not Checked")
+                            console.log("Tea UnChecked")
                         }
                     }
                 }
                 RadioButton{
-                    text:"Ice Cream"
+                    text:"Ice"
                     onCheckedChanged: {
                         if(checked === true){
-                            console.log("Ice Cream Button Checked")
+                            console.log("Ice Checked")
                         }else{
-                            console.log("Ice Cream Button is Not Checked")
+                            console.log("Ice UnChecked")
                         }
                     }
                 }

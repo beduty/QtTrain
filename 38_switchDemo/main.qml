@@ -12,25 +12,28 @@ Window {
         width: parent.width
         spacing: 20
         Switch{
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                    parent.horizontalCenter
             text: "Wifi"
             checked: false
             onCheckedChanged: {
                 if(checked === true)
                 {
-                    console.log("Wifi switch is turned On")
+                    console.log("Wifi On")
                 }else{
-                    console.log("Wifi switch is turned Off")
+                    console.log("Wifi Off")
                 }
             }
         }
         Switch{
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                    parent.horizontalCenter
             text: "BlueTooth"
             checked: true
         }
         Switch{
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                    parent.horizontalCenter
             text: "NFC"
             enabled: false
         }

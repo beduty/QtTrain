@@ -20,16 +20,15 @@ Window {
         DelayButton{
             property bool activated: false
             text : "DelayButton"
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter:
+                            parent.horizontalCenter
             delay: 1000
             onPressed: {
                 if(activated === true){
                     console.log("Button is Clicked")
                     activated = false
                 }
-
             }
-
             onActivated: {
                 console.log("Button Activated")
                 activated = true

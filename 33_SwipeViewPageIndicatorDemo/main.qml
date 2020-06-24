@@ -11,7 +11,8 @@ Window {
     SwipeView{
         id : swipeViewId
         anchors.fill: parent
-        currentIndex: pageIndicatorId.currentIndex
+        currentIndex:
+                 pageIndicatorId.currentIndex
         Image{
             id : imgage1
             source: "images/1.png"
@@ -29,7 +30,8 @@ Window {
     PageIndicator{
         id : pageIndicatorId
         anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenter:
+                       parent.horizontalCenter
         currentIndex: swipeViewId.currentIndex
         interactive: true
         count: swipeViewId.count

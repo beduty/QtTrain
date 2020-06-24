@@ -17,10 +17,12 @@ Window {
             first.value: 25
             second.value: 75
             first.onValueChanged: {
-                console.log("First value changed to : " + first.value)
+                console.log("First value :"
+                             + first.value)
             }
             second.onValueChanged: {
-                console.log("Second value changed to : " + second.value)
+                console.log("Second value :"
+                            + second.value)
             }
         }
         RangeSlider{
@@ -30,10 +32,12 @@ Window {
             first.value: 25
             second.value: 75
             first.onValueChanged: {
-                console.log("First value changed to : " + first.value)
+                console.log("First value :"
+                             + first.value)
             }
             second.onValueChanged: {
-                console.log("Second value changed to : " + second.value)
+                console.log("Second value :"
+                            + second.value)
             }
         }
     }

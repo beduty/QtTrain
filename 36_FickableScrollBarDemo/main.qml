@@ -11,6 +11,7 @@ Window {
         width: parent.width
         height: parent.height
         contentHeight: mColumnId.implicitHeight
+        ScrollBar.vertical:  ScrollBar{}
         Column{
             id : mColumnId
             anchors.fill: parent
@@ -21,50 +22,6 @@ Window {
                 Text{
                     anchors.centerIn: parent
                     text:"Element 1"
-                    font.pointSize: 30
-                    color:"white"
-                }
-            }
-            Rectangle{
-                color: "blue"
-                width: parent.width
-                height: 200
-                Text{
-                    anchors.centerIn: parent
-                    text:"Element 2"
-                    font.pointSize: 30
-                    color:"white"
-                }
-            }
-            Rectangle{
-                color: "yellow"
-                width: parent.width
-                height: 200
-                Text{
-                    anchors.centerIn: parent
-                    text:"Element 3"
-                    font.pointSize: 30
-                    color:"white"
-                }
-            }
-            Rectangle{
-                color: "magenta"
-                width: parent.width
-                height: 200
-                Text{
-                    anchors.centerIn: parent
-                    text:"Element 4"
-                    font.pointSize: 30
-                    color:"white"
-                }
-            }
-            Rectangle{
-                color: "yellowgreen"
-                width: parent.width
-                height: 200
-                Text{
-                    anchors.centerIn: parent
-                    text:"Element 5"
                     font.pointSize: 30
                     color:"white"
                 }
@@ -92,7 +49,6 @@ Window {
                 }
             }
         }
-        ScrollBar.vertical:  ScrollBar{}
     }
 }
 
