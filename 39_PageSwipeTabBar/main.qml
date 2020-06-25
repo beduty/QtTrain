@@ -11,18 +11,16 @@ Window {
     Page{
         id : pageId
         anchors.fill   : parent
-
-//        header: Label{
-//            text : "Page and TabBar Demo"
-//            horizontalAlignment: Text.AlignHCenter
-//        }
-
         header: Rectangle{
             width: parent.width
             height: 50
             color: "red"
+            Label{
+                anchors.centerIn: parent
+                text : "Page and TabBar Demo"
+                font.pixelSize: 22
+            }
         }
-
         SwipeView{
             id : swipeViewId
             anchors.fill   : parent

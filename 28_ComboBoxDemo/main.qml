@@ -21,9 +21,11 @@ Window {
             model : ["One","Two","Three","Four","Five"]
             anchors.horizontalCenter: parent.horizontalCenter
             onActivated: {
-                console.log("[" + currentIndex + "]" + currentText + "is activated")
+                console.log("[" + currentIndex + "]"
+                            + currentText + "is activated")
             }
         }
+
 
 
         Label {

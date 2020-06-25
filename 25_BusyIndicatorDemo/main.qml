@@ -12,7 +12,6 @@ Window {
     ColumnLayout {
         y: 200
         width: parent.width
-        //height: parent.height
         BusyIndicator{
             id : busyIndicatorId
             Layout.alignment: Qt.AlignHCenter
@@ -39,6 +38,16 @@ Window {
                 }
             }
         }
+
+
+
+
+
+
+
+
+
+
 //        Item {
 //            Layout.fillHeight: true
 //            Layout.fillWidth: true

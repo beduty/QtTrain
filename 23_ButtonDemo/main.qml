@@ -18,7 +18,8 @@ Window {
             text: "Button1"
             Layout.fillWidth: true
             onClicked: {
-                console.log("Clicked on Button1")
+                console.log("Clicked
+                             on Button1")
             }
         }
         Button{
@@ -26,7 +27,8 @@ Window {
             text:"Button2"
             Layout.fillWidth: true
             onClicked: {
-                console.log("Clicked on Button2")
+                console.log("Clicked
+                             on Button2")
             }
         }
     }

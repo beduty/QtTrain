@@ -39,26 +39,26 @@ ApplicationWindow {
             }
         }
     }
+    Rectangle{
+        id : contentRectId
+        anchors.fill: parent
+        color: "lightsteelblue"
+    }
     Drawer{
         id : drawerId
         width: Math.min(rootId.width, rootId.height) * (2/3)
         height: rootId.height
         interactive: true
         ColumnLayout{
-            //spacing: 20
-            //anchors.fill : parent
             spacing: 0
             width: parent.width
-
             Button{
                 width: parent.width
                 height: 50
                 text: "Item1"
                 font.pointSize: 20
-                background: Rectangle{
-                    color: "beige"
-                }
                 Layout.fillWidth: true
+                background: Rectangle{color: "beige"}
                 onClicked: {
                     console.log("Clicked on Item1")
                     contentRectId.color = "red"
@@ -70,10 +70,8 @@ ApplicationWindow {
                 height: 50
                 text: "Item2"
                 font.pointSize: 20
-                background: Rectangle{
-                    color: "yellowgreen"
-                }
                 Layout.fillWidth: true
+                background: Rectangle{color: "yellowgreen"}
                 onClicked: {
                     console.log("Clicked on Item2")
                     contentRectId.color = "green"
@@ -85,10 +83,8 @@ ApplicationWindow {
                 height: 50
                 text: "Item3"
                 font.pointSize: 20
-                background: Rectangle{
-                    color: "dodgerblue"
-                }
                 Layout.fillWidth: true
+                background: Rectangle{color: "dodgerblue"}
                 onClicked: {
                     console.log("Clicked on Item3")
                     contentRectId.color = "blue"
@@ -97,12 +93,6 @@ ApplicationWindow {
             }
         }
     }
-    Rectangle{
-        id : contentRectId
-        anchors.fill: parent
-        color: "lightsteelblue"
-    }
-
 }
 
 
