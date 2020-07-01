@@ -1,0 +1,148 @@
+import QtQuick 2.12
+import QtQuick.Window 2.12
+
+Window {
+    visible: true
+    width: 640
+    height: 480
+    title: qsTr("States Transition Demo")
+    Rectangle{
+        id : containerRectId
+        anchors.fill : parent
+        Rectangle{
+            id : sky
+            width: parent.width
+            height: 200
+            color : "blue"
+        }
+        Rectangle{
+            id : ground
+            anchors.top: sky.bottom
+            anchors.bottom: parent.bottom
+            width: parent.width
+            color : "lime"
+        }
+        Image{
+            id : treeSpringId
+            x : 50
+            y : 100
+            width: 200
+            height: 300
+            source: "images/treespringsmall.png"
+        }
+        Image{
+            id : treeSummerId
+            x : 50
+            y : 100
+            width: 200
+            height: 300
+            source: "images/treesummersmall.png"
+        }
+        Rectangle{
+            id : sun
+            x : parent.width - width - 100
+            y : 50
+            width: 100
+            height: 100
+            radius: 60
+            color: "yellow"
+        }
+        state: "spring"
+        states: [
+            State{
+                name : "summer"
+                PropertyChanges {
+                    target: sky
+                    color : "lightblue"
+                }
+                PropertyChanges {
+                    target: treeSummerId
+                    opacity:1
+                }
+                PropertyChanges {
+                    target: treeSpringId
+                    opacity:0
+                }
+                PropertyChanges {
+                    target: ground
+                    color : "darkkhaki"
+                }
+                PropertyChanges {
+                    target: sun
+                    color : "yellow"
+                }
+            },
+            State{
+                name : "spring"
+                PropertyChanges {
+                    target: sky
+                    color : "deepskyblue"
+                }
+                PropertyChanges {
+                    target: treeSummerId
+                    opacity:0
+                }
+                PropertyChanges {
+                    target: treeSpringId
+                    opacity:1
+                }
+                PropertyChanges {
+                    target: ground
+                    color : "lime"
+                }
+                PropertyChanges {
+                    target: sun
+                    color : "lightyellow"
+                }
+            }
+
+        ]
+
+//        // transitions
+//        transitions: [
+//            Transition{
+//                from : "summer"
+//                to : "spring"
+//                ColorAnimation {
+//                    duration: 500
+//                }
+//                NumberAnimation {
+//                    properties: "opacity"
+//                    duration: 500
+//                }
+//            },
+//            Transition{
+//                from : "spring"
+//                to : "summer"
+//                ColorAnimation {
+//                    duration: 500
+//                }
+//                NumberAnimation {
+//                    properties: "opacity"
+//                    duration: 500
+//                }
+//            }
+//        ]
+
+        transitions: Transition {
+            from: "*"
+            to: "*"
+            ColorAnimation {
+                duration: 1000
+            }
+            NumberAnimation {
+                properties: "opacity"
+                duration: 1000
+            }
+        }
+
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                containerRectId.state = (containerRectId.state === "spring" ? "summer" : "spring")
+            }
+        }
+
+
+    }
+}
