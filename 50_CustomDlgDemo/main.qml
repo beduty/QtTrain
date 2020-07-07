@@ -123,6 +123,7 @@ Window {
         }
 
         Button {
+            id : buttonInputId
             text: "Input"
             anchors.horizontalCenter: parent.horizontalCenter
             width: buttonWidth
@@ -149,9 +150,13 @@ Window {
                         Layout.fillWidth: true
                     }
                     TextField {
+                        id :textFieldNameId
                         focus: true
                         placeholderText: "Username"
                         Layout.fillWidth: true
+                        onEditingFinished: {
+                            buttonInputId.text = textFieldNameId.text
+                        }
                     }
                     TextField {
                         placeholderText: "Password"
