@@ -1,9 +1,9 @@
 import QtQuick 2.12
 Rectangle {
     id : root
-    signal clicked
+    signal myclick
     MouseArea{
         anchors.fill : parent
-        onClicked: root.clicked()
+        onClicked: root.myclick()
     }
 }
