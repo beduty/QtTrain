@@ -14,8 +14,10 @@ public:
     void Connect(boost::asio::ip::tcp::endpoint& endpoint);
 private:
     void PostWrite();
+    void PostReceive();
     void handle_connect(const boost::system::error_code& error);
     void handle_write(const boost::system::error_code&, size_t);
+    void handle_receive(const boost::system::error_code& error, size_t bytes_transferred);
 private:
     boost::asio::io_service& m_io_service;
     boost::asio::ip::tcp::socket m_Socket;
