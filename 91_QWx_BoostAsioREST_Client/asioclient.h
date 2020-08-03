@@ -18,6 +18,11 @@ public:
     void get(const QString& url, const QString& path);
     void handle_resolve(const boost::system::error_code& err,
                         boost::asio::ip::tcp::resolver::iterator endpoint_iterator); // 요청하고 나서 결과는 비동기CallBack으로 받는데, 이 콜백 함수를 정의한다.
+    void handle_connect(const boost::system::error_code& err,
+                        boost::asio::ip::tcp::resolver::iterator endpoint_iterator);
+    void handle_write(const boost::system::error_code& err,
+                        boost::asio::ip::tcp::resolver::iterator endpoint_iterator);
+
 private:
     // 사용자는 비동기 요청을 하고, io서비스가 작업을 완료하면, 얻어온 결과를 리턴한다.
     boost::asio::io_service ioservice;
@@ -26,6 +31,10 @@ private:
 
     std::string server,path;
     boost::asio::ip::tcp::resolver resolver;
+    boost::asio::ip::tcp::socket socket;
+
+    boost::asio::streambuf requestbuf;
+
 };
 
 #endif // ASIOCLIENT_H

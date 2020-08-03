@@ -1,6 +1,8 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include <QString>
+#include <QRegularExpression>
+
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -26,6 +28,16 @@ Widget::~Widget()
 
 void Widget::on_getBtn_clicked()
 {
-    //ui->urlEdit->text()
-    client->get("www.boost.org", "/");
+    QString url = ui->urlEdit->text();
+    //client->get("www.boost.org", "/");
+    QRegularExpression re("^(?:([A-Za-z]+):)?(\\/{0,3})([0-9.\\-A-Za-z]+)(?::(\\d+))?(?:\\/([^?#]*))?(?:\\?([^#]*))?(?:#(.*))?$");
+    QRegularExpressionMatch match = re.match(url);
+    if(match.hasMatch()){
+        // "https://regex101.com/"   참조!
+        auto hostName =  match.captured(3);
+        auto urlPath = "/" + match.captured(5);
+        client->get(hostName, urlPath);
+    }
+
+
 }

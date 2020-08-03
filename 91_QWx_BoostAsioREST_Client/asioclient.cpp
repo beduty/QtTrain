@@ -3,7 +3,7 @@
 
 asioClient::asioClient(QObject *parent) : QObject(parent)
     ,work(new boost::asio::io_service::work(ioservice)) // 명시적으로 프로그램이 종료할떄까지 비동기 이벤트를 기다린다!
-    ,resolver(ioservice)
+    ,resolver(ioservice),socket(ioservice)
 {
 
    worker =  std::thread([&](){
@@ -38,5 +38,58 @@ void asioClient::handle_resolve(const boost::system::error_code &err, boost::asi
     if(!err){
         boost::asio::ip::tcp::endpoint ep = *endpoint_iterator;
         qDebug() << ep.address().to_string().c_str();
+
+        // Connect를 시도한다.(Connect요청)
+        socket.async_connect(ep,boost::bind(
+                                 &asioClient::handle_connect,
+                                 this,
+                                 boost::asio::placeholders::error,
+                                 endpoint_iterator)
+                             );
     }
 }
+
+void asioClient::handle_connect(const boost::system::error_code &err, boost::asio::ip::tcp::resolver::iterator endpoint_iterator)
+{
+    if(!err){
+        //success
+        std::ostream os(&requestbuf );
+        os << "GET " << path << " HTTP/1.0\r\n";
+        os << "Host : " << server << "\r\n";
+        os << "Accept: */*\r\n";
+        os << "Connection: close\r\n\r\n";
+
+        // write
+        boost::asio::async_write(socket,buffer, );
+    }
+    else{
+        qDebug() << err.message().c_str()<<endl;
+    }
+}
+
+void asioClient::handle_write(const boost::system::error_code &err, boost::asio::ip::basic_resolver::iterator endpoint_iterator)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
