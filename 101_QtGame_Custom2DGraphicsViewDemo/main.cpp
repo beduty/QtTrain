@@ -58,8 +58,12 @@ int main(int argc, char *argv[])
     scene.addItem(item2);
     item2->setPos(200,0);
     item2->setRotation(20);
+    item2->setFlag(QGraphicsItem::ItemIsSelectable, true);
+    item2->setFlag(QGraphicsItem::ItemIsMovable, true);
 
     QGraphicsView view(&scene);
+    view.setRenderHint(QPainter::Antialiasing);
+    view.setDragMode(QGraphicsView::RubberBandDrag);
     view.show();
 
 
@@ -71,6 +75,7 @@ int main(int argc, char *argv[])
 QGraphicsRectItem *createComplexItem(qreal width, qreal height, qreal radius)
 {
     QRectF rect(-width/2, -height/2, width, height);
+    rect.translate(0.5, 0.5);
     QGraphicsRectItem *parent = new QGraphicsRectItem(rect);
     QRectF circleBoundary(-radius, -radius, 2*radius, 2*radius);
     for(int i = 0; i < 4; i ++)
@@ -95,6 +100,8 @@ QGraphicsRectItem *createComplexItem(qreal width, qreal height, qreal radius)
         }
         child->setPos(pos);
     }
+//    parent->setFlag(QGraphicsItem::ItemIsSelectable, true);
+//    parent->setFlag(QGraphicsItem::ItemIsMovable, true);
     return parent;
 }
 
