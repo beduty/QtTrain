@@ -4,6 +4,31 @@
 FootBallTeam::FootBallTeam(QObject *parent) : QObject(parent)
 {
 
+//    m_player1.setName("Player1");
+//    m_player1.setPosition("Middle Field1");
+//    m_player1.setPlaying(true);
+
+//    m_player2.setName("Player2");
+//    m_player2.setPosition("Middle Field2");
+//    m_player2.setPlaying(false);
+
+//    m_player3.setName("Player3");
+//    m_player3.setPosition("Middle Field3");
+//    m_player3.setPlaying(true);
+
+//    m_player4.setName("Player4");
+//    m_player4.setPosition("Middle Field4");
+//    m_player4.setPlaying(true);
+
+//    m_player5.setName("Player5");
+//    m_player5.setPosition("Middle Field5");
+//    m_player5.setPlaying(false);
+
+//    m_players.append(&m_player1);
+//    m_players.append(&m_player2);
+//    m_players.append(&m_player3);
+//    m_players.append(&m_player4);
+//    m_players.append(&m_player5);
 }
 
 QString FootBallTeam::title() const

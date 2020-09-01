@@ -9,13 +9,10 @@
 class FootBallTeam : public QObject
 {
     Q_OBJECT
-
     Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
     Q_PROPERTY(QString coatch READ coatch WRITE setCoatch NOTIFY coatchChanged)
     Q_PROPERTY(Player * captain READ captain WRITE setCaptain NOTIFY captainChanged)
     Q_PROPERTY(QQmlListProperty<Player> players READ players  NOTIFY playersChanged)
-
-
 
 public:
     explicit FootBallTeam(QObject *parent = nullptr);
@@ -25,8 +22,6 @@ public:
     void setTitle(QString title);
     void setCoatch(QString coatch);
     void setCaptain(Player * captain);
-
-
     QQmlListProperty<Player> players() ;
 
     //Helper methods
@@ -51,6 +46,11 @@ private:
     QString m_coatch;
     Player * m_captain;
     QVector<Player*> m_players;
+    Player m_player1;
+    Player m_player2;
+    Player m_player3;
+    Player m_player4;
+    Player m_player5;
 };
 
 #endif // FOOTBALLTEAM_H

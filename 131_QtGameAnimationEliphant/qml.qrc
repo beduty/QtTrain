@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Player.qml</file>
+        <file>Coin.qml</file>
+        <file>ParallaxLayer.qml</file>
+        <file>ParallaxScene.qml</file>
+    </qresource>
+</RCC>

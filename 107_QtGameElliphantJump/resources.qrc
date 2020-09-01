@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/elephant.png</file>
+        <file>resources/grass.png</file>
+        <file>resources/ground.png</file>
+        <file>resources/sky.png</file>
+        <file>resources/trees.png</file>
+        <file>resources/bushes.svg</file>
+        <file>resources/elephant.svg</file>
+        <file>resources/ground.svg</file>
+        <file>resources/sky.svg</file>
+        <file>resources/trees.svg</file>
+    </qresource>
+</RCC>

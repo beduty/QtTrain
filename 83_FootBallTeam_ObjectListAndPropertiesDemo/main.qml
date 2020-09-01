@@ -18,29 +18,28 @@ Window {
             playing: true
         }
 
-        players: [
-            MyPlayer{
-                name : "Player1"
-                position: "Middle Field1"
-                playing: true
-            },
-            MyPlayer{
-                name : "Player2"
-                position: "Middle Field2"
-                playing: true
-            },
-            MyPlayer{
-                name : "Player3"
-                position: "Middle Field3"
-                playing: true
-            },
-            MyPlayer{
-                name : "Daniel"
-                position: "None"
-                playing: false
-            }
-
-        ]
+//        players: [
+//            MyPlayer{
+//                name : "Player1"
+//                position: "Middle Field1"
+//                playing: true
+//            },
+//            MyPlayer{
+//                name : "Player2"
+//                position: "Middle Field2"
+//                playing: true
+//            },
+//            MyPlayer{
+//                name : "Player3"
+//                position: "Middle Field3"
+//                playing: true
+//            },
+//            MyPlayer{
+//                name : "Daniel"
+//                position: "None"
+//                playing: false
+//            }
+//        ]
     }
     ListView{
         anchors.fill: parent

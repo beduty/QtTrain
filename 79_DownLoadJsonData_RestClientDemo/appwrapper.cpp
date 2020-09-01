@@ -87,7 +87,40 @@ void AppWrapper::dataReadFinished()
 void AppWrapper::resetModel()
 {
     mEngine.rootContext()->setContextProperty("myModel", QVariant::fromValue(mJokes));
+    // Why??
+    // 인터넷에서 다운 데이터를 QML로 넘겨야 한다. (QStringLIst)
+    // 많은 양의 데이터를 넘기면 복사할 때 시간이 오래걸릴 수 밖에 없겠지??
+    // Q_PROPERTY 보다는 Q_INVOKABLE이 낫다. 하지만 이역시도 비효율적이다.
+    //
+    // --> C++에서 모델을 만들고, 이것을 setContextProperty로 QML에 노출시켜주는 방법이 좋다!
+    //     복사하고 자시고 할 필요가 없기 때문!
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

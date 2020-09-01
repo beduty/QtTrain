@@ -62,9 +62,9 @@ Window {
         anchors.top: mRect.bottom
         text : "Click Me"
         onClicked: {
-            //CppClass.cppSlot();
-            CppClass.receivePoint(Qt.point(100,300));
-            CppClass.receiveRect(Qt.rect(100,300.2,86.1,78));
+            CppClass.cppSlot();
+//            CppClass.receivePoint(Qt.point(100,300));
+//            CppClass.receiveRect(Qt.rect(100,300.2,86.1,78));
         }
     }
 }

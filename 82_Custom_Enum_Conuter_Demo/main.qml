@@ -10,12 +10,9 @@ Window {
     height: 480
     title: qsTr("Custom_Enum_Conuter_Demo")
 
-
     MyCounter{
         id : mCounter
     }
-
-
 
     Column{
         anchors.centerIn: parent
@@ -60,7 +57,8 @@ Window {
             text: "Down"
             onClicked: {
                 //mCounter.up = false;
-                mCounter.counting = MyCounting.DOWN
+                mCounter.setCounting(MyCounting.DOWN)
+                //mCounter.counting = MyCounting.DOWN
             }
         }
     }

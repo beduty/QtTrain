@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>369</width>
+    <height>183</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>RPM : </string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QSlider" name="rpmSlider">
+     <property name="maximum">
+      <number>7000</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QSpinBox" name="rpmBox">
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="maximum">
+      <number>7000</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Speed : </string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QSlider" name="speedSlider">
+     <property name="maximum">
+      <number>230</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QSpinBox" name="speedBox">
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="suffix">
+      <string>kph</string>
+     </property>
+     <property name="maximum">
+      <number>230</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Distance :</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QSlider" name="distanceSlider">
+     <property name="maximum">
+      <number>999999</number>
+     </property>
+     <property name="sliderPosition">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QDoubleSpinBox" name="distanceBox">
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="prefix">
+      <string/>
+     </property>
+     <property name="suffix">
+      <string>km</string>
+     </property>
+     <property name="decimals">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <double>999999.900000000023283</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" rowspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Gear</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QSlider" name="gearSlider">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximum">
+         <number>5</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="gearBox">
+        <property name="specialValueText">
+         <string>N</string>
+        </property>
+        <property name="maximum">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>speedSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>speedBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>speedBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>speedSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>143</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rpmSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>rpmBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rpmBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>rpmSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>143</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gearSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>gearBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>335</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gearBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>gearSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>335</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

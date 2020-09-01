@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>monkey.ply</file>
+        <file>phong.frag</file>
+        <file>phong.vert</file>
+    </qresource>
+</RCC>

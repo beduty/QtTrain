@@ -20,7 +20,7 @@ Window {
         target: mCounter
         onCountChanged : {
             console.log("Change2!")
-            mText.text = mCounter.count+"ss"
+            //mText.text = mCounter.count+"ss"
         }
     }
 
@@ -38,7 +38,8 @@ Window {
             Text {
                 id: mText
                 //text: MyCounter2.count//"0"//mCounter.count // emit countChanged가 될때 업데이터된다.
-                text: "0"//mCounter.count // emit countChanged가 될때 업데이터된다.
+                //text: "0"//mCounter.count // emit countChanged가 될때 업데이터된다.
+                text : mCounter.count
                 anchors.centerIn: parent
                 font.pointSize: 20
                 color: "white"

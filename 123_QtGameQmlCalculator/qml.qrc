@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CaculatorForm.qml</file>
+        <file>CaculatorFormForm.ui.qml</file>
+    </qresource>
+</RCC>
