@@ -5,7 +5,7 @@ PersonModel::PersonModel(QObject *parent) : QAbstractListModel(parent)
 {
     addPerson(new Person("Jamie Lannister", "red", 33));
     addPerson(new Person("Marry Lane", "cyan", 26));
-    addPerson(new Person("Steve Moors", "yellwo", 44));
+    addPerson(new Person("Steve Moors", "yellow", 44));
     addPerson(new Person("Victor Trunk", "dodgerblue", 30));
     addPerson(new Person("Ariel Geeny", "blue", 33));
     addPerson(new Person("Knut Vikran", "lightblue", 26));
@@ -14,9 +14,11 @@ PersonModel::PersonModel(QObject *parent) : QAbstractListModel(parent)
 void PersonModel::addPerson(Person *person)
 {
     const int index = mPersons.size();
+    // 해당 모델을 사용하는 View가 변화를 인지할 수 있도록
+    // Insert하기 전에 호출해줘야 한다.
     beginInsertRows(QModelIndex(), index, index);
     mPersons.append(person);
-    endInsertRows();
+    endInsertRows(); // model 변경완료를 View에게 알린다.
 }
 
 void PersonModel::addPerson()
@@ -33,9 +35,11 @@ void PersonModel::addPerson(const QString &names, const int &age)
 
 void PersonModel::removePerson(int index)
 {
+    // 해당 모델을 사용하는 View가 변화를 인지할 수 있도록
+    // Remove하기 전에 호출해줘야 한다.
     beginRemoveRows(QModelIndex(), index, index);
     mPersons.removeAt(index);
-    endRemoveRows();
+    endRemoveRows();// model 변경완료를 VIew에게 알린다.
 }
 
 void PersonModel::removeLastPerson()
@@ -54,6 +58,8 @@ QVariant PersonModel::data(const QModelIndex &index, int role) const
     if(index.row() < 0 || index.row() >= mPersons.count())
         return QVariant();
 
+    // 행과 열(Role)에 해당되는 데이터를 리턴한다.
+    // 이는 QML에서 알아차리기 위함이며, 해당 데이터의 GUI만 Refresh된다!
     Person* person = mPersons[index.row()];
     if(role == NamesRole)
         return person->names();
@@ -91,7 +97,7 @@ bool PersonModel::setData(const QModelIndex &index, const QVariant &value, int r
         }
         case AgeRole :
         {
-            if(person->age() != value.toString()){
+            if(person->age() != value.toInt()){
                 qDebug() << "Changing age for " << person->names();
                 person->setAge(value.toInt());
                 somethingChanged = true;
@@ -108,6 +114,8 @@ bool PersonModel::setData(const QModelIndex &index, const QVariant &value, int r
 
 Qt::ItemFlags PersonModel::flags(const QModelIndex &index) const
 {
+    // QML에서 리스트 모델을 변경하기 위해서는
+    //  -> Qt::ItemIsEditable를 리턴해주는 flags()로 재정의 해줘야한다.
     if(!index.isValid())
         return Qt::NoItemFlags;
     return Qt::ItemIsEditable;
@@ -115,6 +123,7 @@ Qt::ItemFlags PersonModel::flags(const QModelIndex &index) const
 
 QHash<int, QByteArray> PersonModel::roleNames() const
 {
+    // QML에서는 여기서 지정한 QByteArray 즉, "names2"로 데이터의 Role에 접근할 수 있다.
     QHash<int , QByteArray> roles;
     roles[NamesRole] = "names2";
     roles[FavoriteColorRole] = "favoriteColor2";
