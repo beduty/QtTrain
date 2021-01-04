@@ -148,7 +148,7 @@ Window {
                 length: parent.width * 0.35
                 size: 4
                 rotation: 210 + (middleContainer.value * 1.2)
-                color: "yellow"
+                color: "#ffff00"
                 Behavior on rotation {
                     SmoothedAnimation {
                         velocity: 50

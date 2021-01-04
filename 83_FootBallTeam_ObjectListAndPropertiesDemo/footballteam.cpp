@@ -98,8 +98,8 @@ Player *FootBallTeam::playerCustom(int index) const
 }
 
 void FootBallTeam::clearPlayersCustom()
-{
-    m_players.clear();
+    {
+        m_players.clear();
 }
 
 void FootBallTeam::appendPlayer(QQmlListProperty<Player> * list, Player * player)

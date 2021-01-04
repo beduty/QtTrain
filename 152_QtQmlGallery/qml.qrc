@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>pages/BusyIndicatorPage.qml</file>
+        <file>pages/ScrollablePage.qml</file>
+        <file>pages/ButtonPage.qml</file>
+        <file>pages/CheckboxPage.qml</file>
+        <file>pages/ComboBoxPage.qml</file>
+        <file>pages/DelayButtonPage.qml</file>
+        <file>pages/DialPage.qml</file>
+        <file>pages/DialogPage.qml</file>
+        <file>pages/DelegatePage.qml</file>
+        <file>pages/FramePage.qml</file>
+        <file>pages/GroupboxPage.qml</file>
+        <file>pages/PageIndicator.qml</file>
+        <file>pages/ProgressBar.qml</file>
+        <file>pages/RangeSlider.qml</file>
+        <file>pages/ScrollBarPage.qml</file>
+        <file>pages/SliderPage.qml</file>
+        <file>pages/SpinBox.qml</file>
+        <file>pages/StackViewPage.qml</file>
+    </qresource>
+</RCC>

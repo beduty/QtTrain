@@ -1,8 +1,36 @@
 #include "learnqtlogo.h"
+#include <QPainter>
 
-LearnQtLogo::LearnQtLogo(QObject *parent) : QObject(parent)
+LearnQtLogo::LearnQtLogo(QQuickItem *parent) : QQuickPaintedItem(parent),
+    m_bgColor(Qt::white),
+    m_textColor(Qt::blue),
+    m_text("Learn GUI"),
+    m_topic(QTCPP)
 {
+    setWidth(128);
+    setHeight(128);
+}
 
+void LearnQtLogo::paint(QPainter *painter)
+{
+    QString imagePath = ":/images/LearnQt.png";
+    if(m_topic == QTQUICK)
+        imagePath = ":/images/LearnQtQuick.png";
+
+    QImage mImage(imagePath);
+    QImage scaledImage = mImage.scaled(width(), height());
+    QRect mRect(mImage.rect());
+    painter->drawImage(mRect, scaledImage);
+    painter->setBrush(bgColor());
+    painter->drawRect(mRect.bottomLeft().x(),
+                      mRect.bottomLeft().y()-33,
+                      width(), 33);
+    painter->setPen(textColor());
+    auto txtPos = mRect.bottomLeft();
+    txtPos.rx() += 10;
+    txtPos.ry() -= 10;
+    painter->setFont(QFont("Arial", 10, QFont::Bold));
+    painter->drawText(txtPos, text());
 }
 
 QColor LearnQtLogo::bgColor() const
